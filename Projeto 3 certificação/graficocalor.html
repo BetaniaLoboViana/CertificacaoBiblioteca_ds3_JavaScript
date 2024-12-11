@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mapa de Calor</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1 id="title">Mapa de Calor de Temperaturas Globais</h1>
+  <p id="description">Variação de temperatura global de 1754 a 2015, com base em anomalias de temperatura em relação à média de 8,66°C.</p>
+  <div id="container">
+    <svg id="heatmap"></svg>
+    <div id="tooltip" class="hidden" data-year=""></div>
+  </div>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+/* styles.css */
+.bar {
+    fill: steelblue;
+  }
+  
+  .bar:hover {
+    fill: orange;
+  }
+  
+  #tooltip {
+    position: absolute;
+    background-color: white;
+    border: 1px solid black;
+    padding: 5px;
+    display: none;
+  }
+  
