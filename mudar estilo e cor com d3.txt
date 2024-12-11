@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>D3 Conditional Style</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script> 
+<body>
+  <script>
+   
+    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
+
+    
+    d3.select("body")
+      .selectAll("h2")
+      .data(dataset)
+      .enter()
+      .append("h2")
+      .text(d => `${d} USD`) 
+      .style("color", d => d < 20 ? "red" : "green"); 
+  </script>
+</body>
+</html>

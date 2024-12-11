@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>D3 Example</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script> 
+</head>
+<body>
+  <script>
+    // Define um dataset com 9 itens
+    const dataset = Array(9).fill(null); // Cria um array com 9 elementos
+
+    // Seleciona o body e adiciona um <h2> para cada item no dataset
+    d3.select("body") 
+      .selectAll("h2") 
+      .data(dataset) 
+      .enter() 
+      .append("h2") 
+      .text("New Title"); 
+  </script>
+</body>
+</html>

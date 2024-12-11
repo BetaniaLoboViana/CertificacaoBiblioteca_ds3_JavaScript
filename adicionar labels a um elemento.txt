@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Retangulos</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <style>
+    svg {
+      background-color: pink;
+    }
+    rect {
+      margin: 2px;
+    }
+    text {
+      font-size: 12px;
+      text-anchor: middle;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    // Dados (dataset)
+    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
+
+    // Definir as dimensões do SVG
+    const svgHeight = 100; 
+    const barWidth = 25;   
+    const scaleFactor = 3; 
+
+    // Adiciona o elemento SVG ao body
+    const svg = d3.select("body")
+      .append("svg")
+      .attr("width", 500)
+      .attr("height", svgHeight);
+
+    // Adiciona um retângulo para cada item no dataset
+    svg.selectAll("rect")
+      .data(dataset)
+      .enter()
+      .append("rect")
+      .attr("width", barWidth)
+      .attr("height", d => d * scaleFactor) 
+      .attr("x", (d, i) => i * 30)          
+      .attr("y", (d) => svgHeight - (d * scaleFactor)) 
+      .attr("fill", "navy"); 
+
+   
+    svg.selectAll("text")
+      .data(dataset)
+      .enter()
+      .append("text")
+      .attr("x", (d, i) => i * 30 + barWidth / 2)  
+      .attr("y", (d) => svgHeight - (d * scaleFactor) - 3)  
+      .text(d => d)  
+      .attr("fill", "black");  
+  </script>
+</body>
+</html>

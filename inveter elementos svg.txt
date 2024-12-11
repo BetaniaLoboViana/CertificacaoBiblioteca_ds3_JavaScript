@@ -1,0 +1,27 @@
+<body>
+  <script>
+    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
+
+    const w = 500;
+    const h = 100;
+     const svgHeight = 100; 
+    const barWidth = 25;   
+
+    const scaleFactor = 3;
+
+   const svg = d3.select("body")
+      .append("svg")
+      .attr("width", 500)
+      .attr("height", svgHeight);
+
+    svg.selectAll("rect")
+       .data(dataset)
+       .enter()
+       .append("rect")
+       .attr("x", (d, i) => i * 30)
+       .attr("y", (d, i) => i * d)
+.attr("y", (d) => svgHeight - (d * scaleFactor))
+       .attr("width", 25)
+       .attr("height", (d, i) => 3 * d);
+  </script>
+</body>
